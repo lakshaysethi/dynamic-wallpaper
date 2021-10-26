@@ -1,11 +1,12 @@
 from write_to_file import *
-
+from  tgb.manictime import getLastfewHours
 
 def getText():
     text = ""
     time = getTime(datetime.now())
     text += time +"\n"
-#     text += '''TODO:
+   
+#     '''TODO:
 # shower 
 # make fasting app'''
     return text
