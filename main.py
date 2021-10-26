@@ -8,16 +8,16 @@ from PIL import Image, ImageFont, ImageDraw
     # image_editable = ImageDraw.Draw(my_image)
     # my_image.save("result.jpg")
 import os
-
+pwd = '/home/ls/dynamic-wallpaper'
 while True:
     sleep(1)
     img = Image.new('RGB', (1920, 1080), color = (0, 0, 0))
     text = getText()
     draw = ImageDraw.Draw(img)
-    fnt = ImageFont.truetype('./times.ttf', 150)
-    draw.text((1000,100), text, font=fnt, fill=(255, 255, 0))
-    img.save('result.png')
-    os.system("/bin/feh --bg-fill /home/ls/dynamic-wallpaper/result.png")
+    fnt = ImageFont.truetype(f'{pwd}/times.ttf', 150)
+    draw.text((500,100), text, font=fnt, fill=(60, 168, 50))
+    img.save(f'{pwd}/result.png')
+    os.system(f"/bin/feh --bg-fill {pwd}/result.png")
 
 
 
