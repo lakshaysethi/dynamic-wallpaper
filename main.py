@@ -11,8 +11,8 @@ import os
 pwd = '/home/ls/dynamic-wallpaper'
 x = 0
 text_new =""
+seconds = 60
 while True:
-    sleep(1)
     img = Image.new('RGB', (1920, 1080), color = (0, 0, 0))
     text = getText()
     draw = ImageDraw.Draw(img)
@@ -26,9 +26,10 @@ while True:
     fnt = ImageFont.truetype(f'{pwd}/times.ttf', 15)
     draw.text((1500,300), text_new, font=fnt, fill=(60, 168, 50))
 
-    x = x + 1
+    x = x + seconds
     img.save(f'{pwd}/result.png')
     os.system(f"/bin/feh --bg-fill {pwd}/result.png")
+    sleep(seconds)
 
 
 

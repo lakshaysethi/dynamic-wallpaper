@@ -3,7 +3,7 @@ from time import sleep
 
 def getTime(obj):
 	time = str(obj).split()[1].split('.')[0].split(":")
-	return f'{time[0]}:{time[1]}:{time[2]}'
+	return f'{time[0]}:{time[1]}'#:{time[2]}'
 
 # while True:
 #     content = ''
