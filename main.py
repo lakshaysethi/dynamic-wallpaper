@@ -21,6 +21,8 @@ while True:
     if x > 160 or x == 0:
         x = 0
         text_new = getLastfewHours(False)
+        text_new += get_manictime_last_x_days(1)
+
     fnt = ImageFont.truetype(f'{pwd}/times.ttf', 15)
     draw.text((1500,300), text_new, font=fnt, fill=(60, 168, 50))
 
