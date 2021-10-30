@@ -11,6 +11,7 @@ import os
 pwd = '/home/ls/dynamic-wallpaper'
 x = 0
 text_new =""
+text_new2 =""
 seconds = 60
 while True:
     img = Image.new('RGB', (1920, 1080), color = (0, 0, 0))
@@ -21,10 +22,12 @@ while True:
     if x > 160 or x == 0:
         x = 0
         text_new = getLastfewHours(False)
-        text_new += get_manictime_last_x_days(1)
+        text_new2 = get_manictime_last_x_days(2)
 
     fnt = ImageFont.truetype(f'{pwd}/times.ttf', 15)
     draw.text((1500,300), text_new, font=fnt, fill=(60, 168, 50))
+    draw.text((1000,300), text_new2, font=fnt, fill=(60, 168, 50))
+
 
     x = x + seconds
     img.save(f'{pwd}/result.png')
